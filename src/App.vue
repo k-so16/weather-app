@@ -25,9 +25,7 @@ export default {
   created() {
     request('http://weather.livedoor.com/forecast/rss/primary_area.xml').then(body => {
       xml2js.parseString(body, (err, data) => {
-        console.log(data)
         this.prefs = data.rss.channel[0]['ldWeather:source'][0].pref
-        console.log('areas', this.prefs)
       })
     })
   },
