@@ -1,18 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <http-cat-component/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import request from 'request-promise'
+import xml2js from 'xml2js'
+
+import HttpCatComponent from './components/HttpCatComponent'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      prefs: [],
+    }
+  },
+
   components: {
-    HelloWorld
-  }
+    HttpCatComponent,
+  },
+
+  created() {
+    request('http://weather.livedoor.com/forecast/rss/primary_area.xml').then(body => {
+      xml2js.parseString(body, (err, data) => {
+        console.log(data)
+        this.prefs = data.rss.channel[0]['ldWeather:source'][0].pref
+        console.log('areas', this.prefs)
+      })
+    })
+  },
 }
 </script>
 
