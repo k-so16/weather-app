@@ -1,29 +1,52 @@
 # weather-app
+- electron-vue の教育用リポジトリ
+- お天気アプリっぽいものを作る
 
-## Project setup
-```
-npm install
-```
+## セットアップ
+1. リポジトリをクローン
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+    ```bash
+    git clone https://github.com/k-so16/weather-app.git
+    ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. Node.js のパッケージをインストール
 
-### Run your tests
-```
-npm run test
-```
+    ```bash
+    npm install
+    ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 実行
+以下のコマンドでプログラムを実行
+
+  ```bash
+  npm run electron:serve
+  ```
+
+## ビルド
+以下のコマンドでネイティブアプリケーションにコンパイル
+
+  ```bash
+  npm run electron:build
+  ```
+
+
+## 手動による環境構築
+1. Vue-CLI 3 をインストール
+
+    ```bash
+    npm install @vue/cli -g
+    ```
+1. Vue-CLI でプロジェクトを作成
+    - Vuex, Vue Router などのパッケージのインストールはお好みで
+
+    ```bash
+    vue create weather-app
+    ```
+
+1. electron-builder をインストール
+
+    ```bash
+    cd weather-app
+    vue add electron-builder
+    ```
