@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h2>{{ message }}:</h2>
+      <h2>{{ message }}</h2>
       <select v-model="status">
         <option
           v-for="item in statusList"
