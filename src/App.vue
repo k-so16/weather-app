@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <http-cat-component/>
+    <weather-component/>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import request from 'request-promise'
 import xml2js from 'xml2js'
 
-import HttpCatComponent from './components/HttpCatComponent'
+import WeatherComponent from './components/WeatherComponent'
 
 export default {
   name: 'app',
@@ -19,7 +19,7 @@ export default {
   },
 
   components: {
-    HttpCatComponent,
+    WeatherComponent,
   },
 
   created() {
@@ -33,6 +33,8 @@ export default {
 </script>
 
 <style>
+/* お好みソースでどうぞ */
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
